@@ -5,24 +5,6 @@ local UgcWindow = Library:NewWindow("NoobRoblox")
 -- 📜 TAB: SCRIPT
 local SCRIPTSection = UgcWindow:NewSection("UGC1")
 
--- UGC
-SCRIPTSection:CreateButton("UGC", function()
-    -- 🧭 Teleport to CompassPickup
-local player = game.Players.LocalPlayer
-local char = player.Character or player.CharacterAdded:Wait()
-local hrp = char:WaitForChild("HumanoidRootPart")
-
--- Lấy model CompassPickup
-local compassPickup = workspace.World.HUB.ItemCave:WaitForChild("CompassPickup")
-local targetPart = compassPickup.PrimaryPart or compassPickup:FindFirstChildWhichIsA("BasePart")
-
--- Teleport nếu tìm thấy part
-if targetPart then
-    hrp.CFrame = targetPart.CFrame + Vector3.new(0, 3, 0) -- lên cao 3 để tránh bị kẹt
-else
-    warn("CompassPickup not found!")
-end
-end)
 -- GET 3 UGC
 SCRIPTSection:CreateButton("GET 3 UGC", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
